@@ -121,8 +121,7 @@ window.onload = function() {
         var chat_input_send = document.createElement('button')
         chat_input_send.setAttribute('id', 'chat_input_send')
         chat_input_send.setAttribute('disabled', true)
-        chat_input_send.innerHTML = `<p>Send</p>`
-        // <i class="far fa-paper-plane"></i>
+        chat_input_send.innerHTML = `Send`
   
         var chat_input = document.createElement('input')
         chat_input.setAttribute('id', 'chat_input')
