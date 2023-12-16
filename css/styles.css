@@ -196,7 +196,7 @@ body{
     margin-top: 20px;
   }
   #chat_logout{
-    color: #D64045;
+    color: #194290;
     cursor: pointer;
   }
   #chat_logout:hover{
@@ -293,6 +293,6 @@ body{
     background: #cccs;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D64045;
+    background: #194290;
     border-radius: 5px;
   }
