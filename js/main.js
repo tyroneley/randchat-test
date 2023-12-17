@@ -142,19 +142,19 @@ window.onload = function() {
               chat_input.value = ''
               chat_input.focus()
             }
+
+            var input_to_listen = document.getElementById("chat_input");
+    
+            input_to_listen.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("chat_input_send").click();
+              }
+        }); 
           }else{
             chat_input_send.classList.remove('enabled')
           }
         }
-
-        var chat_input= document.getElementById("chat_input");
-    
-        chat_input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("chat_input_send").click();
-          }
-        }); 
   
         var chat_logout_container = document.createElement('div')
         chat_logout_container.setAttribute('id', 'chat_logout_container')
