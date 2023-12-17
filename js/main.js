@@ -146,15 +146,6 @@ window.onload = function() {
             chat_input_send.classList.remove('enabled')
           }
         }
-
-        var chat_input= document.getElementById("chat_input");
-
-        chat_input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("chat_input_send").click();
-          }
-        }); 
   
         var chat_logout_container = document.createElement('div')
         chat_logout_container.setAttribute('id', 'chat_logout_container')
@@ -274,6 +265,15 @@ window.onload = function() {
   
       }
     }
+    
+    var chat_input= document.getElementById("chat_input");
+
+        chat_input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("chat_input_send").click();
+          }
+        }); 
  
     var app = new RandChatApp()
     
