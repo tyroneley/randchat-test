@@ -54,18 +54,19 @@ window.onload = function() {
         join_input.setAttribute('id', 'join_input')
         join_input.setAttribute('maxlength', 15)
         join_input.placeholder = 'What\'s your nickname?'
+        join_button.disabled = true
         join_input.onkeyup  = function(){
           if(join_input.value.length > 0){
-            join_button.classList.add('enabled')
+            join_button.disabled = false
             join_button.style.backgroundColor = "#1D3354";
             join_button.onclick = function(){
               parent.save_name(join_input.value)
               join_container.remove()
               window.location.href = "menu.html"
             }
-          } else{
-
-            join_button.classList.remove('enabled')
+          } else {
+            join_button.style.backgroundColor = "#fff";
+            join_button.disabled = true
           }
         }
 
