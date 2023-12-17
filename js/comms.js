@@ -27,7 +27,6 @@ window.onload = function() {
         this.create_title()
         this.create_chat()
       }
-      
       create_title(){
         var title_container = document.createElement('div')
         title_container.setAttribute('id', 'title_container')
@@ -36,7 +35,7 @@ window.onload = function() {
   
         var title = document.createElement('h1')
         title.setAttribute('id', 'title')
-        title.textContent = 'General'
+        title.textContent = 'Communications'
 
         var menu_container = document.createElement('div')
         menu_container.setAttribute('id', 'header_button_container')
@@ -141,8 +140,7 @@ window.onload = function() {
               join_container.remove()
               parent.create_chat()
             }
-          } else{
-
+          } else {
             join_button.classList.remove('enabled')
           }
         }
@@ -175,6 +173,7 @@ window.onload = function() {
         var title_container = document.getElementById('title_container')
         var title = document.getElementById('title')
         title_container.classList.add('chat_title_container')
+        title.classList.add('chat_title')
   
         var chat_container = document.createElement('div')
         chat_container.setAttribute('id', 'chat_container')
@@ -255,9 +254,9 @@ window.onload = function() {
           return
         }
 
-        db.ref('general/').once('value', function(message_object) {
+        db.ref('comms/').once('value', function(message_object) {
           var index = parseFloat(message_object.numChildren()) + 1
-          db.ref('general/' + `message_${index}`).set({
+          db.ref('comms/' + `message_${index}`).set({
             name: parent.get_name(),
             message: message,
             index: index
@@ -279,7 +278,7 @@ window.onload = function() {
 
       refresh_chat(){
         var chat_content_container = document.getElementById('chat_content_container')
-        db.ref('general/').on('value', function(messages_object) {
+        db.ref('comms/').on('value', function(messages_object) {
           chat_content_container.innerHTML = ''
           if(messages_object.numChildren() == 0){
             return

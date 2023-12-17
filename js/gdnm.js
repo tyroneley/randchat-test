@@ -36,14 +36,14 @@ window.onload = function() {
   
         var title = document.createElement('h1')
         title.setAttribute('id', 'title')
-        title.textContent = 'General'
+        title.textContent = 'Graphic Design & Media'
 
         var menu_container = document.createElement('div')
         menu_container.setAttribute('id', 'header_button_container')
 
         var button = document.createElement('button')
         button.setAttribute('id', 'header_button')
-        button.innerHTML = 'General Chat'
+        button.innerHTML = 'General'
 
         var button2 = document.createElement('button')
         button2.setAttribute('id', 'header_button')
@@ -175,6 +175,7 @@ window.onload = function() {
         var title_container = document.getElementById('title_container')
         var title = document.getElementById('title')
         title_container.classList.add('chat_title_container')
+        title.classList.add('chat_title')
   
         var chat_container = document.createElement('div')
         chat_container.setAttribute('id', 'chat_container')
@@ -255,9 +256,9 @@ window.onload = function() {
           return
         }
 
-        db.ref('general/').once('value', function(message_object) {
+        db.ref('gdnm/').once('value', function(message_object) {
           var index = parseFloat(message_object.numChildren()) + 1
-          db.ref('general/' + `message_${index}`).set({
+          db.ref('gdnm/' + `message_${index}`).set({
             name: parent.get_name(),
             message: message,
             index: index
@@ -279,7 +280,7 @@ window.onload = function() {
 
       refresh_chat(){
         var chat_content_container = document.getElementById('chat_content_container')
-        db.ref('general/').on('value', function(messages_object) {
+        db.ref('gdnm/').on('value', function(messages_object) {
           chat_content_container.innerHTML = ''
           if(messages_object.numChildren() == 0){
             return
